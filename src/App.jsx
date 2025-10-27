@@ -74,7 +74,7 @@ function App() {
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 md:gap-8 items-stretch">
           {/* Avatar / Hero */}
           <div className="flex flex-col">
-            <AvatarScene speaking={!paused && !onBreak} />
+            <AvatarScene speaking={!paused && !onBreak} bubbleText={currentWord ? `Say "${currentWord}"` : ''} />
           </div>
 
           {/* Right column: transcript, letters, controls */}
@@ -97,7 +97,7 @@ function App() {
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm grid place-items-center p-4 z-50">
           <div className="max-w-md w-full bg-white rounded-2xl p-6 shadow-xl text-center">
             <h2 className="text-xl md:text-2xl font-bold text-slate-900 mb-2">Break time</h2>
-            <p className="text-slate-600 mb-6">Stretch, sip water, and come back when youre ready.</p>
+            <p className="text-slate-600 mb-6">Stretch, sip water, and come back when you're ready.</p>
             <div className="flex items-center justify-center gap-3">
               <button
                 onClick={() => setOnBreak(false)}
